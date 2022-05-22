@@ -26,13 +26,13 @@ const Purchase = () => {
 
     const quabtityChange = (e) => {
         let quantity = e.target.value;
-        console.log(quantity);
+        // console.log(quantity);
 
         if (quantity < 1000) {
-            setErrorMessage('Errr dekho na?');
+            setErrorMessage('Please order at least 1000ps+');
         }
         if (quantity > singleParts.availableQuantity) {
-            setErrorMessage('besi dichco toh!')
+            setErrorMessage('Unavailable parts stock!');
         }
 
         if (quantity > 1000 && quantity < singleParts.availableQuantity) {
@@ -49,15 +49,26 @@ const Purchase = () => {
         const address = event.target.address.value;
         const orderQuantity = event.target.quantity.value;
 
-        // if (orderQuantity < 1000) {
+        if (orderQuantity > 1000 && orderQuantity < singleParts.availableQuantity) {
+            const booked = { name, email, number, address, orderQuantity };
 
-        //     alert("Please order upto 1000ps!");
-        //     setDisabled(true);
-        // }
-        // if (orderQuantity > singleParts?.availableQuantity) {
-        //     alert("Products quantity aren't in stock right now");
-        //     setDisabled(true);
-        // }
+            fetch('http://localhost:5000/booking', {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(booked)
+            })
+                .then(res => res.json())
+                .then(posted => {
+                    // console.log(posted);
+                    if (posted.acknowledged) {
+                        toast.success('Booked successfully');
+                    }
+                })
+
+        }
+
 
     }
 
@@ -118,11 +129,11 @@ const Purchase = () => {
                                     </label>
                                     <input type="number" onChange={quabtityChange} name='quantity' required placeholder="put your quantity" class="input input-bordered" />
                                     {
-                                        errorMessage && <p className='text-red-500'><small>{errorMessage}</small></p>
+                                        errorMessage && <p className='text-red-500 mt-2'><small>{errorMessage}</small></p>
                                     }
                                 </div>
                                 <div class="form-control mt-6">
-                                    <button disabled={disabled} type='submit' class="btn btn-primary">Purchase Now</button>
+                                    <button disabled={errorMessage} type='submit' class="btn btn-primary">Purchase Now</button>
                                 </div>
                             </form>
                         </div>
