@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PartsPro = ({ part }) => {
     const [expand, setExpand] = useState(false);
 
-    const { name, img, description, price, minimumOrderQuantity, availableQuantity } = part;
+    const { name, img, description, price, _id, minimumOrderQuantity, availableQuantity } = part;
 
     return (
 
@@ -20,7 +20,7 @@ const PartsPro = ({ part }) => {
                     <span className='font-semibold'>Minimum Order:</span> {minimumOrderQuantity}ps <br />
                     <span className='font-semibold'>In Stock:</span> {availableQuantity}ps</p>
                 <div class="card-actions justify-center">
-                    <Link to='/buy'><button class="btn btn-primary">Buy Now</button></Link>
+                    <Link to={`/parts/${_id}`}><button class="btn btn-primary">Purchase</button></Link>
                 </div>
             </div>
         </div>

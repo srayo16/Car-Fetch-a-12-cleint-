@@ -12,7 +12,7 @@ const Parts = () => {
             .then(data => setParts(data))
     }, [])
 
-    if (parts?.length < 0) {
+    if (parts.length <= 0) {
         return <Loading></Loading>
     }
 
