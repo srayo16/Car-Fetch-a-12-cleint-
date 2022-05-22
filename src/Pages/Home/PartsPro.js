@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PartsPro = ({ part }) => {
     const [expand, setExpand] = useState(false);
@@ -19,7 +20,7 @@ const PartsPro = ({ part }) => {
                     <span className='font-semibold'>Minimum Order:</span> {minimumOrderQuantity}ps <br />
                     <span className='font-semibold'>In Stock:</span> {availableQuantity}ps</p>
                 <div class="card-actions justify-center">
-                    <button class="btn btn-primary">Buy Now</button>
+                    <Link to='/buy'><button class="btn btn-primary">Buy Now</button></Link>
                 </div>
             </div>
         </div>
