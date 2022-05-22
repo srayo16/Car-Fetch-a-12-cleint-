@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../Shared/Loading';
 import PartsPro from './PartsPro';
 
 const Parts = () => {
@@ -6,10 +7,14 @@ const Parts = () => {
 
 
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/parts')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
+
+    if (parts?.length < 0) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className='container mx-auto my-20'>
@@ -18,7 +23,7 @@ const Parts = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20'>
                 {
-                    parts.map((part, index) => <PartsPro key={index} part={part}></PartsPro>)
+                    parts.map(part => <PartsPro key={part._id} part={part}></PartsPro>)
                 }
             </div>
 
