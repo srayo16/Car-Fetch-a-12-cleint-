@@ -1,0 +1,50 @@
+[
+    {
+        "img": "https://i.ibb.co/9TYPvXP/engine.jpg",
+        "name": "Engine Parts",
+        "description": "Mega engine parts. Made in Japan. Packed by Bangladesh. It's a high quality strong engine. Engine power 1500cc. Milage per kilometer 3L.",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 20000,
+        "price": 5000
+    },
+    {
+        "img": "https://i.ibb.co/cFFGdTL/yuliyan-grozdev-AACi-Lm-IBAjo-unsplash.jpg",
+        "name": "Rim Wheel",
+        "description": "Mega rim wheel. Made in Japan. Packed by Bangladesh. It's a high quality long lasting product. Size 36 inch, stainless still body.",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 50000,
+        "price": 1000
+    },
+    {
+        "img": "https://i.ibb.co/MnVmGRk/richard-biros-p-XFDct-Qs-Uys-unsplash.jpg",
+        "name": "Headlight LED",
+        "description": "Mega headlight LED. Made in Thailand. Packed by Bangladesh. High quality ensure. Power 440v. Pair size",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 30000,
+        "price": 500
+    },
+    {
+        "img": "https://i.ibb.co/S5TJ3xR/gear.jpg",
+        "name": "Gear Box",
+        "description": "Mega gear box. Made in China. Packed by Bangladesh. High quality ensure. 5 space port. Regular uses not for sports function.",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 40000,
+        "price": 1000
+    },
+    {
+        "img": "https://i.ibb.co/vq8JwBW/tiar.jpg",
+        "name": "Tier Set",
+        "description": "Mega tier set. Made in India. Packed by Bangladesh. It's a high quality long lasting product. Primary size 36 inch but all size are available.",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 20000,
+        "price": 5000
+    },
+    {
+        "img": "https://i.ibb.co/P1XNB5F/speedmeter.jpg",
+        "name": "SpeedMeter Pair",
+        "description": "Mega speed meter. Made by Japan. Packed by Bangladesh. Better quality ensure. Max limit 180 kmp. RGB included.",
+        "minimumOrderQuantity": 1000,
+        "availableQuantity": 60000,
+        "price": 1000
+    }
+]
