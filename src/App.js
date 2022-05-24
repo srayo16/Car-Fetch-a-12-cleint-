@@ -8,6 +8,11 @@ import Navbar from './Pages/Shared/Navbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAuth from './Components/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddaReview from './Pages/Dashboard/AddaReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import MyOrdersPro from './Pages/Dashboard/MyOrdersPro';
 
 
 function App() {
@@ -20,6 +25,15 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/parts/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='/dashboard/review' element={<AddaReview></AddaReview>}></Route>
+          <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='/dashboard/myorderpro' element={<MyOrdersPro></MyOrdersPro>}></Route>
+
+
+        </Route>
       </Routes>
       <ToastContainer />
     </>

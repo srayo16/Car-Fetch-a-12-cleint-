@@ -45,12 +45,14 @@ const Purchase = () => {
 
         const name = event.target.name.value;
         const email = event.target.email.value;
+        const partsName = singleParts?.name;
+        const partsId = singleParts?._id;
         const number = event.target.number.value;
         const address = event.target.address.value;
         const orderQuantity = event.target.quantity.value;
 
         if (orderQuantity > 1000 && orderQuantity < singleParts.availableQuantity) {
-            const booked = { name, email, number, address, orderQuantity };
+            const booked = { name, email, partsName, partsId, orderQuantity, number, address };
 
             fetch('http://localhost:5000/booking', {
                 method: "POST",
@@ -64,6 +66,7 @@ const Purchase = () => {
                     // console.log(posted);
                     if (posted.acknowledged) {
                         toast.success('Booked successfully');
+                        event.target.reset();
                     }
                 })
 
