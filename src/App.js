@@ -13,6 +13,7 @@ import MyOrders from './Pages/Dashboard/MyOrders';
 import AddaReview from './Pages/Dashboard/AddaReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrdersPro from './Pages/Dashboard/MyOrdersPro';
+import Payment from './Pages/Dashboard/Payment';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/dashboard/review' element={<AddaReview></AddaReview>}></Route>
           <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='/dashboard/myorderpro' element={<MyOrdersPro></MyOrdersPro>}></Route>
+          <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
 
 
         </Route>

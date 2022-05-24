@@ -11,7 +11,7 @@ const Purchase = () => {
     const [user, loading] = useAuthState(auth);
     const [disabled, setDisabled] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const quantity = useRef('');
+    const quantities = useRef('');
     const { isLoading, error, data: singleParts, refetch } = useQuery('partsBySingle', () =>
         fetch(`http://localhost:5000/parts/${id}`).then(res =>
             res.json()
@@ -49,10 +49,11 @@ const Purchase = () => {
         const partsId = singleParts?._id;
         const number = event.target.number.value;
         const address = event.target.address.value;
-        const orderQuantity = event.target.quantity.value;
+        let orderQuantity = event.target.quantity.value;
+        const price = event.target.price.value;
 
         if (orderQuantity > 1000 && orderQuantity < singleParts.availableQuantity) {
-            const booked = { name, email, partsName, partsId, orderQuantity, number, address };
+            const booked = { name, email, partsName, partsId, orderQuantity, price, number, address };
 
             fetch('http://localhost:5000/booking', {
                 method: "POST",
@@ -74,6 +75,11 @@ const Purchase = () => {
 
 
     }
+
+    let pricePerInit = singleParts.price;
+    let totalOrder = quantities?.current?.value;
+    let priceTotal = totalOrder * pricePerInit;
+
 
     return (
         <div className='mx-5'>
@@ -130,11 +136,19 @@ const Purchase = () => {
                                     <label class="label">
                                         <span class="label-text">Order Quantity</span>
                                     </label>
-                                    <input type="number" onChange={quabtityChange} name='quantity' required placeholder="put your quantity" class="input input-bordered" />
+                                    <input type="number" onChange={quabtityChange} ref={quantities} name='quantity' required placeholder="put your quantity" class="input input-bordered" />
                                     {
                                         errorMessage && <p className='text-red-500 mt-2'><small>{errorMessage}</small></p>
                                     }
                                 </div>
+
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Total Price $</span>
+                                    </label>
+                                    <input type="number" value={priceTotal} readOnly required name='price' class="input input-bordered" />
+                                </div>
+
                                 <div class="form-control mt-6">
                                     <button disabled={errorMessage} type='submit' class="btn btn-primary">Purchase Now</button>
                                 </div>

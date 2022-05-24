@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../Firebase.init';
 import Loading from '../Shared/Loading';
+import ModalPro from './ModalPro';
 import MyOrdersPro from './MyOrdersPro';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
-    const { isLoading, error, data: orders } = useQuery('orderData', () =>
+    const [canceling, setCanceling] = useState([]);
+    const { isLoading, error, data: orders, refetch } = useQuery('orderData', () =>
         fetch(`http://localhost:5000/booking?email=${user.email}`).then(res =>
             res.json()
         )
@@ -15,11 +17,11 @@ const MyOrders = () => {
     if (isLoading || loading) return <Loading></Loading>
 
     if (error) return 'An error has occurred: ' + error.message;
-    console.log(orders)
+    // console.log(orders)
     return (
         <div class="overflow-x-auto">
             <table class="table table-compact w-full">
-                {/* <!-- head --> */}
+
                 <thead>
                     <tr>
                         <th></th>
@@ -30,12 +32,13 @@ const MyOrders = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <!-- row 1 --> */}
+
                     {
-                        orders.map((order, index) => <MyOrdersPro key={order._id} index={index} order={order}></MyOrdersPro>)
+                        orders.map((order, index) => <MyOrdersPro key={order._id} setCanceling={setCanceling} index={index} order={order}></MyOrdersPro>)
                     }
                 </tbody>
             </table>
+            {canceling && <ModalPro canceling={canceling} setCanceling={setCanceling} refetch={refetch}></ModalPro>}
         </div>
     );
 };
