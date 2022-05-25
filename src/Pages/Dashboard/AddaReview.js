@@ -10,7 +10,7 @@ const AddaReview = () => {
     const [rated, setRated] = useState(0);
     const [user, loading] = useAuthState(auth);
     const [errorMessage, setErrorMessage] = useState('');
-
+    // console.log(user.photoURL);
     const ratingPoint = e => {
         let rate = e.target.value;
 
@@ -40,9 +40,9 @@ const AddaReview = () => {
         const description = event.target.description.value;
         const name = user?.displayName;
         const email = user?.email;
-        const review = { name, email, rating, description };
+        const image = user?.photoURL;
+        const review = { name, email, image, rating, description };
 
-        // if (rating >= 0 || rating <= 5) {
         fetch('http://localhost:5000/review', {
             method: "POST",
             headers: {
@@ -52,17 +52,13 @@ const AddaReview = () => {
         })
             .then(res => res.json())
             .then(posted => {
-                console.log(posted);
+                // console.log(posted);
                 if (posted.acknowledged) {
                     toast.success('Thanks for your review');
                     event.target.reset();
                 }
             })
-        // }
 
-        // else {
-        //     alert('Please give rating in any numbers of 1-5')
-        // }
     }
 
     return (

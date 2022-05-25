@@ -14,6 +14,7 @@ import AddaReview from './Pages/Dashboard/AddaReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrdersPro from './Pages/Dashboard/MyOrdersPro';
 import Payment from './Pages/Dashboard/Payment';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 function App() {
