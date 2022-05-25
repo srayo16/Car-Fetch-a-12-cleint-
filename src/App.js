@@ -20,6 +20,7 @@ import Notfound from './Pages/Shared/Notfound';
 import FooterPro from './Pages/Shared/FooterPro';
 import OfferPage from './Pages/Home/OfferPage';
 import Users from './Pages/Dashboard/Users';
+import RequireAdmin from './Components/RequireAdmin';
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
           <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='/dashboard/myorderpro' element={<MyOrdersPro></MyOrdersPro>}></Route>
           <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
-          <Route path='/dashboard/users' element={<Users></Users>}></Route>
+          <Route path='/dashboard/users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
         </Route>
 
         <Route path='*' element={<Notfound></Notfound>}></Route>
