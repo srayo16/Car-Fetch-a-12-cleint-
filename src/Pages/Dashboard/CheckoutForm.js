@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import Loading from '../Shared/Loading';
 
 const CheckoutForm = ({ booking }) => {
 
@@ -10,7 +11,7 @@ const CheckoutForm = ({ booking }) => {
     const [clientSecret, setClientSecret] = useState("");
     const [cardSuccess, setCardSuccess] = useState("");
     const [clientTransId, setClientTransId] = useState("");
-    const [procceing, setProcceing] = useState(false);
+    const [processing, setProcessing] = useState(false);
 
     const { price, name, partsName, _id, email } = booking;
 
@@ -34,10 +35,6 @@ const CheckoutForm = ({ booking }) => {
             });
     }, [price]);
 
-    // if (procceing) {
-    //     return <Spinners></Spinners>
-    // }
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         const card = elements.getElement(CardElement);
@@ -52,7 +49,7 @@ const CheckoutForm = ({ booking }) => {
 
         setCardError(error?.message || '');
         setCardSuccess('');
-        setProcceing(true);
+        setProcessing(true);
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -68,13 +65,14 @@ const CheckoutForm = ({ booking }) => {
 
         if (intentError) {
             setCardError(intentError?.message);
-            setProcceing(false);
+            setProcessing(false);
         }
         else {
             setCardError('');
             // console.log(paymentIntent);
             setClientTransId(paymentIntent.id);
             setCardSuccess('Congrats! Your payment is completed.');
+            setProcessing(false);
 
             const payment = {
                 appointmentId: _id,
@@ -92,16 +90,21 @@ const CheckoutForm = ({ booking }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data.modifiedCount > 0) {
 
+                    if (data.modifiedCount > 0) {
+                        setProcessing(false);
                         // console.log(data);
-                        setProcceing(false);
+
                     }
                 })
 
         }
 
     };
+
+    if (processing) {
+        return <Loading></Loading>
+    }
 
     return (
         <>

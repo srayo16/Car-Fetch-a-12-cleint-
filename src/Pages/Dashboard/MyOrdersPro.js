@@ -19,7 +19,7 @@ const MyOrdersPro = ({ order, index, setCanceling }) => {
                     <p>Transaction id: <span className='text-orange-500'>{order?.transactionId}</span></p>
                 </div>}</td>
             <td>
-                {/* <label for="my-modal-cancel" onClick={() => setCanceling(order)} class="btn  btn-xs sm:btn-sm md:btn-md lg:btn-sm btn-outline btn-error modal-button">Cancel</label> */}
+
                 {
                     order?.paid ? <p className='text-green-500'>Confirmed</p> : <label for="my-modal-cancel" onClick={() => setCanceling(order)} class="btn  btn-xs sm:btn-sm md:btn-md lg:btn-sm btn-outline btn-error modal-button">Cancel</label>
                 }

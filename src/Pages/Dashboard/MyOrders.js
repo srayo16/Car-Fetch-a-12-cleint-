@@ -19,7 +19,7 @@ const MyOrders = () => {
     if (error) return 'An error has occurred: ' + error.message;
     // console.log(orders)
     return (
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto mt-5">
             <table class="table table-compact w-full">
 
                 <thead>

@@ -9,10 +9,9 @@ import Loading from '../Shared/Loading';
 const Purchase = () => {
     const { id } = useParams();
     const [user, loading] = useAuthState(auth);
-    const [disabled, setDisabled] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const quantities = useRef('');
-    const { isLoading, error, data: singleParts, refetch } = useQuery('partsBySingle', () =>
+    const { isLoading, error, data: singleParts } = useQuery('partsBySingle', () =>
         fetch(`http://localhost:5000/parts/${id}`).then(res =>
             res.json()
         )
