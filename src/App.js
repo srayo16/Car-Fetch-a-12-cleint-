@@ -16,6 +16,10 @@ import MyOrdersPro from './Pages/Dashboard/MyOrdersPro';
 import Payment from './Pages/Dashboard/Payment';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import MyPortfolio from './Pages/Myportfolio/MyPortfolio';
+import Notfound from './Pages/Shared/Notfound';
+import FooterPro from './Pages/Shared/FooterPro';
+import OfferPage from './Pages/Home/OfferPage';
+import Users from './Pages/Dashboard/Users';
 
 
 function App() {
@@ -29,16 +33,19 @@ function App() {
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/parts/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
+        <Route path='/offerpage' element={<OfferPage></OfferPage>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/review' element={<AddaReview></AddaReview>}></Route>
           <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='/dashboard/myorderpro' element={<MyOrdersPro></MyOrdersPro>}></Route>
           <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
-
-
+          <Route path='/dashboard/users' element={<Users></Users>}></Route>
         </Route>
+
+        <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
+      <FooterPro></FooterPro>
       <ToastContainer />
     </>
   );

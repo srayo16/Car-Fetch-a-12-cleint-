@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/myportfolio'>MyPortfolio</Link></li>
         {
-            user ? <li className='btn btn-ghost items-center normal-case' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
+            user ? <li className='btn btn-ghost lg:items-center w-5 lg:w-fit font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
         }
 
 

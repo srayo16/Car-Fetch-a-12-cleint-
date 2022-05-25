@@ -5,6 +5,7 @@ import auth from '../../Firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../Shared/Loading';
 import { toast } from 'react-toastify';
+import UseToken from '../../Components/Hooks/UseToken';
 
 const Signup = () => {
     let location = useLocation();
@@ -19,7 +20,7 @@ const Signup = () => {
         error1,
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, error2] = useUpdateProfile(auth);
-    // const [token] = UseToken(user || user1);
+    const [token] = UseToken(user || user1);
 
     let from = location.state?.from?.pathname || "/";
     if (loading || loading1 || updating || sending1) {
@@ -31,21 +32,21 @@ const Signup = () => {
         errorMessage = <p className='text-red-500'><small>{error?.message || error1?.message || error2?.message || error3?.message}</small></p>
     }
 
-    // if (token) {
-    //     navigate(from, { replace: true });
-    //     toast('Welcome to Doctor Portal')
-    // }
-    if (user || user1) {
+    if (token) {
         navigate(from, { replace: true });
         toast.success('Welcome to Car-Fetch');
     }
+    // if (user || user1) {
+    //     navigate(from, { replace: true });
+    //     toast.success('Welcome to Car-Fetch');
+    // }
 
     const onSubmit = async data => {
 
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         await sendEmailVerification();
-        toast.success('Email sent');
+        // toast.success('Email sent');
     }
     return (
         <div class="hero h-screen bg-base-100 container mx-auto">
