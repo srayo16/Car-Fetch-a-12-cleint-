@@ -15,6 +15,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrdersPro from './Pages/Dashboard/MyOrdersPro';
 import Payment from './Pages/Dashboard/Payment';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import MyPortfolio from './Pages/Myportfolio/MyPortfolio';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/parts/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
-
+        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/review' element={<AddaReview></AddaReview>}></Route>
