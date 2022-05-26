@@ -64,19 +64,19 @@ const MyProfile = () => {
     return (
         <>
 
-            <div class="hero my-h-screen bg-base-100 container mx-auto">
-                <div class="hero-content flex-col lg:flex-col">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-3xl text-center font-bold">Your Name: {user?.displayName}</h1>
-                        <p class="pt-6 text-xl font-bold text-center">Your Email: {user?.email}</p>
+            <div className="hero my-h-screen bg-base-100 container mx-auto">
+                <div className="hero-content flex-col lg:flex-col">
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-3xl text-center font-bold">Your Name: {user?.displayName}</h1>
+                        <p className="pt-6 text-xl font-bold text-center">Your Email: {user?.email}</p>
 
                     </div>
 
                     {infoverify && <>
-                        <label for="updateModal" class="btn btn-outline btn-primary modal-button mt-5" onClick={() => setUpdateModal(info)}>Edit</label>
-                        <div class="overflow-x-auto container mx-auto mb-5">
+                        <label for="updateModal" className="btn btn-outline btn-primary modal-button mt-5" onClick={() => setUpdateModal(info)}>Edit</label>
+                        <div className="overflow-x-auto container mx-auto mb-5">
 
-                            <table class="table table-compact lg:table-normal w-full">
+                            <table className="table table-compact lg:table-normal w-full">
 
                                 <thead>
                                     <tr>
@@ -138,43 +138,43 @@ const MyProfile = () => {
                     </>}
                     {!infoverify &&
 
-                        <>   <div class="card flex-shrink-0 mt-6 w-80 lg:w-96 max-w-sm  shadow-2xl bg-base-100">
-                            <div class="card-body">
+                        <>   <div className="card flex-shrink-0 mt-6 w-80 lg:w-96 max-w-sm  shadow-2xl bg-base-100">
+                            <div className="card-body">
                                 <p className='text-xl text-center font-semibold'>Add your information</p>
                                 <form onSubmit={postInfoOfUser}>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text">Education</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Education</span>
                                         </label>
-                                        <input type="text" name='education' placeholder="education" class="input input-bordered" required />
+                                        <input type="text" name='education' placeholder="education" className="input input-bordered" required />
 
                                     </div>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text">Location</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Location</span>
                                         </label>
-                                        <input type="text" name='location' placeholder="city/district" class="input input-bordered" required />
+                                        <input type="text" name='location' placeholder="city/district" className="input input-bordered" required />
                                     </div>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text">Phone Number</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Phone Number</span>
                                         </label>
-                                        <input type="number" name='number' placeholder="phone number with country code" class="input input-bordered" required />
+                                        <input type="number" name='number' placeholder="phone number with country code" className="input input-bordered" required />
                                     </div>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text">LinkedIn Profile</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">LinkedIn Profile</span>
                                         </label>
-                                        <input type="link" name='linkedin' placeholder="linkedin profile link" class="input input-bordered" required />
+                                        <input type="link" name='linkedin' placeholder="linkedin profile link" className="input input-bordered" required />
                                     </div>
-                                    <div class="form-control">
-                                        <label class="label">
-                                            <span class="label-text">Hobby</span>
+                                    <div className="form-control">
+                                        <label className="label">
+                                            <span className="label-text">Hobby</span>
                                         </label>
-                                        <input type="text" name='hobby' placeholder="your hobby" class="input input-bordered" required />
+                                        <input type="text" name='hobby' placeholder="your hobby" className="input input-bordered" required />
                                     </div>
-                                    <div class="form-control mt-6">
-                                        <button type='submit' class="btn btn-primary">Submit</button>
+                                    <div className="form-control mt-6">
+                                        <button type='submit' className="btn btn-primary">Submit</button>
                                     </div>
                                 </form>
                             </div>

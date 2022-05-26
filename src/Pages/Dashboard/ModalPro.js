@@ -23,14 +23,14 @@ const ModalPro = ({ canceling, setCanceling, refetch }) => {
 
     return (
         <>
-            <input type="checkbox" id="my-modal-cancel" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are you sure to cancel {partsName} part's order?</h3>
-                    <p class="py-4">If you are sure to cancel then click yes or if you are not then click no!</p>
-                    <div class="modal-action">
-                        <label for="my-modal-cancel" onClick={() => cancelingOrder(_id)} class="btn  btn-xs sm:btn-sm md:btn-md lg:btn-sm btn-outline btn-primary">Yes!</label>
-                        <label for="my-modal-cancel" onClick={() => setCanceling([])} class="btn  btn-xs sm:btn-sm md:btn-md lg:btn-sm btn-outline btn-error">No!</label>
+            <input type="checkbox" id="my-modal-cancel" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Are you sure to cancel {partsName} part's order?</h3>
+                    <p className="py-4">If you are sure to cancel then click yes or if you are not then click no!</p>
+                    <div className="modal-action">
+                        <label for="my-modal-cancel" onClick={() => cancelingOrder(_id)} className="btn  btn-xs sm:btn-sm md:btn-md lg:btn-sm btn-outline btn-primary">Yes!</label>
+                        <label for="my-modal-cancel" onClick={() => setCanceling([])} className="btn  btn-xs sm:btn-sm md:btn-md lg:btn-sm btn-outline btn-error">No!</label>
                     </div>
                 </div>
             </div>

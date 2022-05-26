@@ -11,7 +11,12 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const [Loadings, setLoadings] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('http://localhost:5000/review', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setReviews(data.reverse());

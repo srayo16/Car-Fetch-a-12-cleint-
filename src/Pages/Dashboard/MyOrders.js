@@ -19,7 +19,7 @@ const MyOrders = () => {
     // }, [email])
 
     const { isLoading, error, data: orders, refetch } = useQuery('booking', () =>
-        fetch(`http://localhost:5000/booking?email=${email}`).then(res =>
+        fetch(`http://localhost:5000/book?email=${email}`).then(res =>
             res.json()
         )
     )
@@ -29,8 +29,8 @@ const MyOrders = () => {
     if (error) return 'An error has occurred: ' + error.message;
     // console.log(orders)
     return (
-        <div class="overflow-x-auto mt-5">
-            <table class="table table-compact w-full">
+        <div className="overflow-x-auto mt-5">
+            <table className="table table-compact w-full">
 
                 <thead>
                     <tr>

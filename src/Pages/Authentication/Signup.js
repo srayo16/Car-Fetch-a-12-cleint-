@@ -36,10 +36,7 @@ const Signup = () => {
         navigate(from, { replace: true });
         toast.success('Welcome to Car-Fetch');
     }
-    // if (user || user1) {
-    //     navigate(from, { replace: true });
-    //     toast.success('Welcome to Car-Fetch');
-    // }
+
 
     const onSubmit = async data => {
 
@@ -49,20 +46,20 @@ const Signup = () => {
         // toast.success('Email sent');
     }
     return (
-        <div class="hero h-screen bg-base-100 container mx-auto">
-            <div class="hero-content flex-col lg:flex-col">
-                <div class="text-center  lg:text-left">
-                    <h1 class="text-5xl mb-5 text-primary font-bold">Sign Up!</h1>
+        <div className="hero h-screen bg-base-100 container mx-auto">
+            <div className="hero-content flex-col lg:flex-col">
+                <div className="text-center  lg:text-left">
+                    <h1 className="text-5xl mb-5 text-primary font-bold">Sign Up!</h1>
                 </div>
-                <div class="card flex-shrink-0 w-80 lg:w-96 max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-80 lg:w-96 max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Name</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" placeholder="name" class="input input-bordered"  {...register("name", {
+                                <input type="text" placeholder="name" className="input input-bordered"  {...register("name", {
                                     required: {
                                         value: true,
                                         message: 'Name is Required'
@@ -75,11 +72,11 @@ const Signup = () => {
                                 </label>
                             </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" class="input input-bordered" {...register("email", {
+                                <input type="email" placeholder="email" className="input input-bordered" {...register("email", {
                                     required: {
                                         value: true,
                                         message: 'Email is Required'
@@ -96,11 +93,11 @@ const Signup = () => {
                                 </label>
                             </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" class="input input-bordered" {...register("password", {
+                                <input type="password" placeholder="password" className="input input-bordered" {...register("password", {
                                     required: {
                                         value: true,
                                         message: 'Password is Required'
@@ -119,19 +116,19 @@ const Signup = () => {
 
                             </div>
 
-                            <div class="form-control mt-6">
-                                <button class="btn btn-primary">Sign Up</button>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Sign Up</button>
                             </div>
 
                         </form>
 
-                        <p class="label-text-alt text-center cursor-pointer">Already have an account? <Link to='/login'><span className='font-bold text-primary  link link-hover'>Please login</span></Link></p>
+                        <p className="label-text-alt text-center cursor-pointer">Already have an account? <Link to='/login'><span className='font-bold text-primary  link link-hover'>Please login</span></Link></p>
 
-                        <div class="flex flex-col w-full border-opacity-50">
+                        <div className="flex flex-col w-full border-opacity-50">
 
-                            <div class="divider">OR</div>
+                            <div className="divider">OR</div>
                             <div>
-                                <button onClick={() => signInWithGoogle()} class="btn btn-outline w-80 btn-primary uppercase">Continue With Google</button>
+                                <button onClick={() => signInWithGoogle()} className="btn btn-outline w-80 btn-primary uppercase">Continue With Google</button>
                             </div>
                         </div>
                     </div>

@@ -22,14 +22,14 @@ const ModalofProductDelete = ({ setDeleteProduct, deleteProduct, refetch }) => {
 
     return (
         <>
-            <input type="checkbox" id="deleteProductModal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are you sure to delete {deleteProduct?.name}?</h3>
-                    <p class="py-4">{deleteProduct?.availableQuantity} are available in stock. If you sure to delete then please click Yes.</p>
-                    <div class="modal-action">
-                        <label for="deleteProductModal" onClick={() => deleteProductSub(_id)} class="btn btn-primary">Yes!</label>
-                        <label for="deleteProductModal" onClick={() => setDeleteProduct(null)} class="btn btn-error text-error-content">No!</label>
+            <input type="checkbox" id="deleteProductModal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Are you sure to delete {deleteProduct?.name}?</h3>
+                    <p className="py-4">{deleteProduct?.availableQuantity} are available in stock. If you sure to delete then please click Yes.</p>
+                    <div className="modal-action">
+                        <label for="deleteProductModal" onClick={() => deleteProductSub(_id)} className="btn btn-primary">Yes!</label>
+                        <label for="deleteProductModal" onClick={() => setDeleteProduct(null)} className="btn btn-error text-error-content">No!</label>
                     </div>
                 </div>
             </div></>

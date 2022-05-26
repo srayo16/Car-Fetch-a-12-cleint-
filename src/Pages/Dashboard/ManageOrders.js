@@ -6,7 +6,12 @@ import ManageOrderPro from './ManageOrderPro';
 
 const ManageOrders = () => {
     const { isLoading, error, data: orders, refetch } = useQuery('allOrder', () =>
-        fetch('http://localhost:5000/booking').then(res =>
+        fetch('http://localhost:5000/booking', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res =>
             res.json()
         )
     )
@@ -17,8 +22,8 @@ const ManageOrders = () => {
 
 
     return (
-        <div class="overflow-x-auto mt-5 mb-40">
-            <table class="table table-compact w-full">
+        <div className="overflow-x-auto mt-5 mb-40">
+            <table className="table table-compact w-full">
 
                 <thead>
                     <tr>

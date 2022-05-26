@@ -7,9 +7,12 @@ import ModalofProductDelete from './ModalofProductDelete';
 const ManageProducts = () => {
 
     const { isLoading, error, data: products, refetch } = useQuery('productData', () =>
-        fetch('http://localhost:5000/parts').then(res =>
-            res.json()
-        )
+        fetch('http://localhost:5000/parts', {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res => res.json())
     )
 
     const [deleteProduct, setDeleteProduct] = useState();
@@ -19,8 +22,8 @@ const ManageProducts = () => {
     if (error) return 'An error has occurred: ' + error.message
 
     return (
-        <div class="overflow-x-auto mt-5 nb-40">
-            <table class="table w-full">
+        <div className="overflow-x-auto mt-5 nb-40">
+            <table className="table w-full">
 
                 <thead>
                     <tr>

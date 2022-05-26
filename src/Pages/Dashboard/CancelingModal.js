@@ -26,14 +26,14 @@ const CancelingModal = ({ cancelModal, setCancelModal, refetch }) => {
     return (
         <>
 
-            <input type="checkbox" id="cancelingModal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are you sure to delete {partsName} order?</h3>
-                    <p class="py-4">Ordered by {name}. If you are sure then click Yes ,else click No.</p>
-                    <div class="modal-action">
-                        <label for="cancelingModal" onClick={() => canceling(_id)} class="btn">Yes!</label>
-                        <label for="cancelingModal" onClick={() => setCancelModal(null)} class="btn">No!</label>
+            <input type="checkbox" id="cancelingModal" className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Are you sure to delete {partsName} order?</h3>
+                    <p className="py-4">Ordered by {name}. If you are sure then click Yes ,else click No.</p>
+                    <div className="modal-action">
+                        <label for="cancelingModal" onClick={() => canceling(_id)} className="btn">Yes!</label>
+                        <label for="cancelingModal" onClick={() => setCancelModal(null)} className="btn">No!</label>
                     </div>
                 </div>
             </div></>

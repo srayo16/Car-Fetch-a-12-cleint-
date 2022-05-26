@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import UseToken from '../../Components/Hooks/UseToken';
 import auth from '../../Firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -18,7 +19,7 @@ const Login = () => {
         error1,
     ] = useSignInWithEmailAndPassword(auth);
 
-    // const [token] = UseToken(user || user1);
+    const [token] = UseToken(user || user1);
     const email = useRef('');
     let from = location.state?.from?.pathname || "/";
 
@@ -28,7 +29,7 @@ const Login = () => {
     //         toast('Welcome to Doctor Portal');
     //     }
 
-    if (user || user1) {
+    if (token) {
         navigate(from, { replace: true });
         toast.success('Welcome to Car-Fetch');
 
@@ -70,45 +71,45 @@ const Login = () => {
 
 
     return (
-        <div class="hero h-screen bg-base-100  container mx-auto">
-            <div class="hero-content flex-col lg:flex-col">
-                <div class="text-center  lg:text-left">
-                    <h1 class="text-5xl mb-5 text-primary font-bold">Login now!</h1>
+        <div className="hero h-screen bg-base-100  container mx-auto">
+            <div className="hero-content flex-col lg:flex-col">
+                <div className="text-center  lg:text-left">
+                    <h1 className="text-5xl mb-5 text-primary font-bold">Login now!</h1>
                 </div>
-                <div class="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={subLoginForm}>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" ref={email} name='email' placeholder="email" class="input input-bordered" required />
+                                <input type="email" ref={email} name='email' placeholder="email" className="input input-bordered" required />
                             </div>
 
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" class="input input-bordered" name='password' required />
+                                <input type="password" placeholder="password" className="input input-bordered" name='password' required />
 
                                 {errorMessage}
-                                <label class="label">
-                                    <p onClick={() => forgotPass()} class="label-text-alt link link-hover">Forgot password?</p>
+                                <label className="label">
+                                    <p onClick={() => forgotPass()} className="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
                             </div>
 
-                            <div class="form-control mt-6">
-                                <button type='submit' class="btn btn-primary">Login</button>
+                            <div className="form-control mt-6">
+                                <button type='submit' className="btn btn-primary">Login</button>
                             </div>
 
                         </form>
 
-                        <p class="label-text-alt text-center cursor-pointer">New to car-fetch? <Link to='/signup'><span className='font-bold text-primary  link link-hover'>Signup now</span></Link></p>
-                        <div class="flex flex-col w-full border-opacity-50">
+                        <p className="label-text-alt text-center cursor-pointer">New to car-fetch? <Link to='/signup'><span className='font-bold text-primary  link link-hover'>Signup now</span></Link></p>
+                        <div className="flex flex-col w-full border-opacity-50">
 
-                            <div class="divider">OR</div>
+                            <div className="divider">OR</div>
                             <div>
-                                <button onClick={() => signInWithGoogle()} class="btn btn-outline w-80 btn-primary uppercase">Continue With Google</button>
+                                <button onClick={() => signInWithGoogle()} className="btn btn-outline w-80 btn-primary uppercase">Continue With Google</button>
                             </div>
                         </div>
                     </div>

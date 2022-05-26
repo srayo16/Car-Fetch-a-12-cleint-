@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyPortfolio = () => {
     return (
-        <div class="my-h-screen container mx-auto px-10 mb-32 mt-5 bg-base-100">
+        <div className="my-h-screen container mx-auto px-10 mb-32 mt-5 bg-base-100">
             <div>
                 <h1 className='text-4xl text-center font-extrabold'>MD. SAIMON SIKDER SRAYO</h1>
                 <p className='text-center text-xl mt-3 mb-20 font-semibold'>Email: srayosikder@gmail.com</p>

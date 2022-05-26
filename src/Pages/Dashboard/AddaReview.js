@@ -62,35 +62,35 @@ const AddaReview = () => {
     }
 
     return (
-        <div class="hero my-h-screen bg-base-100 container mx-auto">
-            <div class="hero-content flex-col lg:flex-col">
-                <div class="text-center lg:text-left">
-                    <h1 class="text-4xl text-primary text-center font-bold">Add a review now!</h1>
-                    <p class="py-6 text-center">Feel free to feedback us</p>
+        <div className="hero my-h-screen bg-base-100 container mx-auto">
+            <div className="hero-content flex-col lg:flex-col">
+                <div className="text-center lg:text-left">
+                    <h1 className="text-4xl text-primary text-center font-bold">Add a review now!</h1>
+                    <p className="py-6 text-center">Feel free to feedback us</p>
                     <div className='ml-5    '>
                         <DynamicStar fullStarColor='#0692B4' emptyStarColor='#D4D9E3' width={50} rating={rated} />
                     </div>
                 </div>
-                <div class="card flex-shrink-0  w-80 lg:w-96 max-w-sm  shadow-2xl bg-base-100">
-                    <div class="card-body">
+                <div className="card flex-shrink-0  w-80 lg:w-96 max-w-sm  shadow-2xl bg-base-100">
+                    <div className="card-body">
                         <form onSubmit={handleSubReview}>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Rating Number</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Rating Number</span>
                                 </label>
-                                <input type="number" name='rated' onChange={ratingPoint} placeholder="give your rating (1-5)" class="input input-bordered" required />
+                                <input type="number" name='rated' onChange={ratingPoint} placeholder="give your rating (1-5)" className="input input-bordered" required />
                                 {
                                     errorMessage && <p className='text-red-500 mt-2'><small>{errorMessage}</small></p>
                                 }
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Description</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Description</span>
                                 </label>
-                                <textarea type="text" name='description' placeholder="description" class="input input-bordered" required />
+                                <textarea type="text" name='description' placeholder="description" className="input input-bordered" required />
                             </div>
-                            <div class="form-control mt-6">
-                                <button type='submit' class="btn btn-primary">Submit</button>
+                            <div className="form-control mt-6">
+                                <button type='submit' className="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>

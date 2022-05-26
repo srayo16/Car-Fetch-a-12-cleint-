@@ -84,74 +84,74 @@ const Purchase = () => {
 
     return (
         <div className='mx-5'>
-            <div class="hero my-h-screen mt-3 bg-base-100 overflow-hidden">
-                <div class="hero-content flex-col lg:flex-row">
-                    <img src={singleParts?.img} class="max-w-sm w-full h-auto rounded-lg lg:mt-20 border-4" alt='partsImage' />
+            <div className="hero my-h-screen mt-3 bg-base-100 overflow-hidden">
+                <div className="hero-content flex-col lg:flex-row">
+                    <img src={singleParts?.img} className="max-w-sm w-full h-auto rounded-lg lg:mt-20 border-4" alt='partsImage' />
                     <div>
-                        <h1 class="text-3xl lg:text-5xl ml-14 lg:ml-20 text-primary font-bold">{singleParts?.name}</h1>
-                        <p class="mt-6 text-xl"><span className='font-bold'>Description:</span> {singleParts?.description}</p>
-                        <p class="text-xl my-2"><span className='font-bold'>Price:</span> ${singleParts?.price}</p>
-                        <p class="text-xl"><span className='font-bold'>ID:</span> {singleParts?._id}</p>
-                        <p class="text-xl my-2"><span className='font-bold'>MinOrder:</span> {singleParts?.minimumOrderQuantity}</p>
-                        <p class="text-xl"><span className='font-bold'>In stock:</span> {singleParts?.availableQuantity}</p>
+                        <h1 className="text-3xl lg:text-5xl ml-14 lg:ml-20 text-primary font-bold">{singleParts?.name}</h1>
+                        <p className="mt-6 text-xl"><span className='font-bold'>Description:</span> {singleParts?.description}</p>
+                        <p className="text-xl my-2"><span className='font-bold'>Price:</span> ${singleParts?.price}</p>
+                        <p className="text-xl"><span className='font-bold'>ID:</span> {singleParts?._id}</p>
+                        <p className="text-xl my-2"><span className='font-bold'>MinOrder:</span> {singleParts?.minimumOrderQuantity}</p>
+                        <p className="text-xl"><span className='font-bold'>In stock:</span> {singleParts?.availableQuantity}</p>
                     </div>
                 </div>
             </div> <hr className='mt-20' />
-            <div class="hero my-h-screen  bg-base-100">
-                <div class="hero-content flex-col lg:flex-col">
-                    <div class="text-center lg:text-left">
-                        <h1 class="text-3xl lg:text-5xl font-bold text-primary text-center">Complete the purchase!</h1>
-                        <p class="mt-6 text-center text-xl">Please fill up this form for complete your purchase</p>
+            <div className="hero my-h-screen  bg-base-100">
+                <div className="hero-content flex-col lg:flex-col">
+                    <div className="text-center lg:text-left">
+                        <h1 className="text-3xl lg:text-5xl font-bold text-primary text-center">Complete the purchase!</h1>
+                        <p className="mt-6 text-center text-xl">Please fill up this form for complete your purchase</p>
                     </div>
-                    <div class="card flex-shrink-0 w-full max-w-sm  bg-base-100">
-                        <div class="card-body">
+                    <div className="card flex-shrink-0 w-full max-w-sm  bg-base-100">
+                        <div className="card-body">
 
                             {/* form start  */}
 
                             <form onSubmit={purchaseParts}>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Name</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" name='name' value={user?.displayName} readOnly class="input input-bordered" />
+                                    <input type="text" name='name' value={user?.displayName} readOnly className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Email</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name='email' value={user?.email} readOnly class="input input-bordered" />
+                                    <input type="email" name='email' value={user?.email} readOnly className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Address</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Address</span>
                                     </label>
-                                    <input type="text" name='address' required placeholder="address" class="input input-bordered" />
+                                    <input type="text" name='address' required placeholder="address" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Phone Number</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Phone Number</span>
                                     </label>
-                                    <input type="number" name='number' required placeholder="your number" class="input input-bordered" />
+                                    <input type="number" name='number' required placeholder="your number" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Order Quantity</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Order Quantity</span>
                                     </label>
-                                    <input type="number" onChange={quabtityChange} ref={quantities} name='quantity' required placeholder="put your quantity" class="input input-bordered" />
+                                    <input type="number" onChange={quabtityChange} ref={quantities} name='quantity' required placeholder="put your quantity" className="input input-bordered" />
                                     {
                                         errorMessage && <p className='text-red-500 mt-2'><small>{errorMessage}</small></p>
                                     }
                                 </div>
 
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Total Price $</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Total Price $</span>
                                     </label>
-                                    <input type="number" value={priceTotal} readOnly required name='price' class="input input-bordered" />
+                                    <input type="number" value={priceTotal} readOnly required name='price' className="input input-bordered" />
                                 </div>
 
-                                <div class="form-control mt-6">
-                                    <button disabled={errorMessage} type='submit' class="btn btn-primary">Purchase Now</button>
+                                <div className="form-control mt-6">
+                                    <button disabled={errorMessage} type='submit' className="btn btn-primary">Purchase Now</button>
                                 </div>
                             </form>
                         </div>

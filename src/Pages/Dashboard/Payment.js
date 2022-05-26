@@ -17,6 +17,7 @@ const Payment = () => {
             res.json()
         )
     )
+
     if (isLoading) {
         return <Loading></Loading>
     }
