@@ -21,8 +21,9 @@ const Navbar = () => {
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/myportfolio'>MyPortfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
-
-
+        {
+            user ? <li className='btn btn-ghost w-fit lg:mx-auto lg:items-center lg:w-auto w-25  font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
+        }
 
     </>
 
@@ -45,9 +46,6 @@ const Navbar = () => {
                                     </a>
                                     <ul class="p-2 bg-primary">
                                         <li><Link to='/dashboard '>Dashboard</Link></li>
-                                        {
-                                            user ? <li className='btn btn-ghost  w-5 font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
-                                        }
                                     </ul>
                                 </li>
                             }
@@ -67,9 +65,7 @@ const Navbar = () => {
                                 </a>
                                 <ul class="p-2 bg-primary">
                                     <li><Link to='/dashboard'>Dashboard</Link></li>
-                                    {
-                                        user ? <li className='btn btn-ghost mx-auto items-center w-fit font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
-                                    }
+
                                 </ul>
                             </li>
                         }
