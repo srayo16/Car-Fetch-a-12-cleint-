@@ -32,7 +32,7 @@ const Signup = () => {
         errorMessage = <p className='text-red-500'><small>{error?.message || error1?.message || error2?.message || error3?.message}</small></p>
     }
 
-    if (token) {
+    if (token || user || user1) {
         navigate(from, { replace: true });
         toast.success('Welcome to Car-Fetch');
     }

@@ -23,13 +23,7 @@ const Login = () => {
     const email = useRef('');
     let from = location.state?.from?.pathname || "/";
 
-    // useEffect(() => {
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //         toast('Welcome to Doctor Portal');
-    //     }
-
-    if (token) {
+    if (token || user || user1) {
         navigate(from, { replace: true });
         toast.success('Welcome to Car-Fetch');
 
