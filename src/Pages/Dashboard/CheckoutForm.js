@@ -76,7 +76,8 @@ const CheckoutForm = ({ booking }) => {
 
             const payment = {
                 appointmentId: _id,
-                transactionId: paymentIntent.id
+                transactionId: paymentIntent.id,
+                status: 'pending'
 
             }
 

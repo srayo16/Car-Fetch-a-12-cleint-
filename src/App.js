@@ -21,6 +21,10 @@ import FooterPro from './Pages/Shared/FooterPro';
 import OfferPage from './Pages/Home/OfferPage';
 import Users from './Pages/Dashboard/Users';
 import RequireAdmin from './Components/RequireAdmin';
+import AddaProduct from './Pages/Dashboard/AddaProduct';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
+import Blogs from './Pages/Blogs';
 
 
 function App() {
@@ -35,6 +39,8 @@ function App() {
         <Route path='/parts/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/offerpage' element={<OfferPage></OfferPage>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/review' element={<AddaReview></AddaReview>}></Route>
@@ -42,6 +48,9 @@ function App() {
           <Route path='/dashboard/myorderpro' element={<MyOrdersPro></MyOrdersPro>}></Route>
           <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
           <Route path='/dashboard/users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+          <Route path='/dashboard/addproduct' element={<RequireAdmin><AddaProduct></AddaProduct></RequireAdmin>}></Route>
+          <Route path='/dashboard/manageorders' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
+          <Route path='/dashboard/manageproduct' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
         </Route>
 
         <Route path='*' element={<Notfound></Notfound>}></Route>

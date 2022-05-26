@@ -42,8 +42,10 @@ const Purchase = () => {
     const purchaseParts = event => {
         event.preventDefault();
 
-        const name = event.target.name.value;
-        const email = event.target.email.value;
+        // const name = event.target.name.value;
+        // const email = event.target.email.value;
+        const name = user?.displayName;
+        const email = user.email;
         const partsName = singleParts?.name;
         const partsId = singleParts?._id;
         const number = event.target.number.value;

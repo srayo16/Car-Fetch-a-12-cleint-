@@ -8,8 +8,10 @@ import MyOrdersPro from './MyOrdersPro';
 const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     const [canceling, setCanceling] = useState([]);
+    const email = user?.email;
+    // console.log(user);
     const { isLoading, error, data: orders, refetch } = useQuery('orderData', () =>
-        fetch(`http://localhost:5000/booking?email=${user.email}`).then(res =>
+        fetch(`http://localhost:5000/booking?email=${email}`).then(res =>
             res.json()
         )
     )
