@@ -10,7 +10,7 @@ const ManageProductsPro = ({ product, index, setDeleteProduct }) => {
             <td>{name}</td>
             <td>{availableQuantity}</td>
             <td>
-                <label for="deleteProductModal" onClick={() => setDeleteProduct(product)} className="btn btn-sm btn-outline btn-error modal-button">Delete</label></td>
+                <label htmlFor="deleteProductModal" onClick={() => setDeleteProduct(product)} className="btn btn-sm btn-outline btn-error modal-button">Delete</label></td>
         </tr>
     );
 };

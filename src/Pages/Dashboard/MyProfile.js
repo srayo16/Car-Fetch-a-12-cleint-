@@ -73,7 +73,7 @@ const MyProfile = () => {
                     </div>
 
                     {infoverify && <>
-                        <label for="updateModal" className="btn btn-outline btn-primary modal-button mt-5" onClick={() => setUpdateModal(info)}>Edit</label>
+                        <label htmlFor="updateModal" className="btn btn-outline btn-primary modal-button mt-5" onClick={() => setUpdateModal(info)}>Edit</label>
                         <div className="overflow-x-auto container mx-auto mb-5">
 
                             <table className="table table-compact lg:table-normal w-full">

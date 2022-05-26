@@ -32,8 +32,8 @@ const CancelingModal = ({ cancelModal, setCancelModal, refetch }) => {
                     <h3 className="font-bold text-lg">Are you sure to delete {partsName} order?</h3>
                     <p className="py-4">Ordered by {name}. If you are sure then click Yes ,else click No.</p>
                     <div className="modal-action">
-                        <label for="cancelingModal" onClick={() => canceling(_id)} className="btn">Yes!</label>
-                        <label for="cancelingModal" onClick={() => setCancelModal(null)} className="btn">No!</label>
+                        <label htmlFor="cancelingModal" onClick={() => canceling(_id)} className="btn">Yes!</label>
+                        <label htmlFor="cancelingModal" onClick={() => setCancelModal(null)} className="btn">No!</label>
                     </div>
                 </div>
             </div></>

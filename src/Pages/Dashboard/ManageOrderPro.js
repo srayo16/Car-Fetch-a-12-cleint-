@@ -56,7 +56,7 @@ const ManageOrderPro = ({ order, index, refetch, setCancelModal }) => {
             </td>
             <td>
                 {/* <button disabled={paid} className="btn btn-xs btn-error" onClick={() => canceling(_id)}>Cancel</button> */}
-                <label for="cancelingModal" disabled={paid} className="btn btn-xs btn-error modal-button" onClick={() => setCancelModal(order)}>Cancel</label>
+                <label htmlFor="cancelingModal" disabled={paid} className="btn btn-xs btn-error modal-button" onClick={() => setCancelModal(order)}>Cancel</label>
             </td>
         </tr>
     );

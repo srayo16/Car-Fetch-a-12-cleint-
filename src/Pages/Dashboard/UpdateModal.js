@@ -42,7 +42,7 @@ const UpdateModal = ({ updateModal, setUpdateModal, }) => {
             <input type="checkbox" id="updateModal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box">
-                    <label for="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2" onClick={() => setUpdateModal(null)}>✕</label>
+                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2" onClick={() => setUpdateModal(null)}>✕</label>
                     <p className="py-4">
                         <p className='text-xl text-center font-semibold'>Edit your information</p>
                         <form onSubmit={updateOne}>

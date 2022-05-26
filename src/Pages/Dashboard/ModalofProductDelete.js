@@ -28,8 +28,8 @@ const ModalofProductDelete = ({ setDeleteProduct, deleteProduct, refetch }) => {
                     <h3 className="font-bold text-lg">Are you sure to delete {deleteProduct?.name}?</h3>
                     <p className="py-4">{deleteProduct?.availableQuantity} are available in stock. If you sure to delete then please click Yes.</p>
                     <div className="modal-action">
-                        <label for="deleteProductModal" onClick={() => deleteProductSub(_id)} className="btn btn-primary">Yes!</label>
-                        <label for="deleteProductModal" onClick={() => setDeleteProduct(null)} className="btn btn-error text-error-content">No!</label>
+                        <label htmlFor="deleteProductModal" onClick={() => deleteProductSub(_id)} className="btn btn-primary">Yes!</label>
+                        <label htmlFor="deleteProductModal" onClick={() => setDeleteProduct(null)} className="btn btn-error text-error-content">No!</label>
                     </div>
                 </div>
             </div></>
