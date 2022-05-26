@@ -9,7 +9,7 @@ const ManageOrderPro = ({ order, index, refetch, setCancelModal }) => {
 
     const changeStatus = (id) => {
 
-        fetch(`http://localhost:5000/all-booking/${id}`, {
+        fetch(`https://fathomless-atoll-13213.herokuapp.com/all-booking/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

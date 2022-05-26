@@ -7,7 +7,7 @@ import ModalofProductDelete from './ModalofProductDelete';
 const ManageProducts = () => {
 
     const { isLoading, error, data: products, refetch } = useQuery('productData', () =>
-        fetch('http://localhost:5000/parts', {
+        fetch('https://fathomless-atoll-13213.herokuapp.com/parts', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -14,7 +14,7 @@ const MyProfile = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/information?email=${email}`)
+        fetch(`https://fathomless-atoll-13213.herokuapp.com/information?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setInfo(data);
@@ -42,7 +42,7 @@ const MyProfile = () => {
         const information = { name, email, education, location, number, linkedin, hobby };
         // console.log(information)
 
-        fetch('http://localhost:5000/information', {
+        fetch('https://fathomless-atoll-13213.herokuapp.com/information', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

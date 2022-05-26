@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe(`${process.env.REACT_APP_Publishable_key}`);
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/booking/${id}`;
+    const url = `https://fathomless-atoll-13213.herokuapp.com/booking/${id}`;
     const { isLoading, error, data: booking } = useQuery(['booking', id], () =>
         fetch(url, {
             method: "GET"

@@ -12,7 +12,7 @@ const Purchase = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const quantities = useRef('');
     const { isLoading, error, data: singleParts } = useQuery('partsBySingle', () =>
-        fetch(`http://localhost:5000/parts/${id}`).then(res =>
+        fetch(`https://fathomless-atoll-13213.herokuapp.com/parts/${id}`).then(res =>
             res.json()
         )
     )
@@ -56,7 +56,7 @@ const Purchase = () => {
         if (orderQuantity > 1000 && orderQuantity < singleParts.availableQuantity) {
             const booked = { name, email, partsName, partsId, orderQuantity, price, number, address };
 
-            fetch('http://localhost:5000/booking', {
+            fetch('https://fathomless-atoll-13213.herokuapp.com/booking', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

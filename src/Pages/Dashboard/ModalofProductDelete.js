@@ -7,7 +7,7 @@ const ModalofProductDelete = ({ setDeleteProduct, deleteProduct, refetch }) => {
 
     const deleteProductSub = id => {
 
-        fetch(`http://localhost:5000/parts/${id}`, {
+        fetch(`https://fathomless-atoll-13213.herokuapp.com/parts/${id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

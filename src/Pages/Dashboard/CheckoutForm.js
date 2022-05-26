@@ -16,7 +16,7 @@ const CheckoutForm = ({ booking }) => {
     const { price, name, partsName, _id, email } = booking;
 
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://fathomless-atoll-13213.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -81,7 +81,7 @@ const CheckoutForm = ({ booking }) => {
 
             }
 
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://fathomless-atoll-13213.herokuapp.com/booking/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

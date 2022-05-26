@@ -6,7 +6,7 @@ import ManageOrderPro from './ManageOrderPro';
 
 const ManageOrders = () => {
     const { isLoading, error, data: orders, refetch } = useQuery('allOrder', () =>
-        fetch('http://localhost:5000/booking', {
+        fetch('https://fathomless-atoll-13213.herokuapp.com/booking', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

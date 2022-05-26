@@ -11,7 +11,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const [Loadings, setLoadings] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/review', {
+        fetch('https://fathomless-atoll-13213.herokuapp.com/review', {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

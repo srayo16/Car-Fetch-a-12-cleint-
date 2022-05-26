@@ -16,7 +16,7 @@ const AddaProduct = () => {
         const total = { name, img, price, availableQuantity, description, minimumOrderQuantity };
         // console.log(total);
 
-        fetch('http://localhost:5000/parts', {
+        fetch('https://fathomless-atoll-13213.herokuapp.com/parts', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

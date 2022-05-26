@@ -16,7 +16,7 @@ const UpdateModal = ({ updateModal, setUpdateModal, }) => {
         const update = { education, location, number, linkedin, hobby };
 
 
-        fetch(`http://localhost:5000/information/${email}`, {
+        fetch(`https://fathomless-atoll-13213.herokuapp.com/information/${email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

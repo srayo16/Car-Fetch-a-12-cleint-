@@ -43,7 +43,7 @@ const AddaReview = () => {
         const image = user?.photoURL;
         const review = { name, email, image, rating, description };
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://fathomless-atoll-13213.herokuapp.com/review', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
