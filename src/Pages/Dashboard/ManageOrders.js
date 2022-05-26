@@ -26,7 +26,9 @@ const ManageOrders = () => {
                         <th>Email</th>
                         <th>Ordered</th>
                         <th>Quantity</th>
-                        <th>Action</th>
+                        <th>Status</th>
+                        <th>Process</th>
+                        <th>Cancel</th>
                     </tr>
                 </thead>
                 <tbody>

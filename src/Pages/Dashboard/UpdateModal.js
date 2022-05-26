@@ -50,32 +50,32 @@ const UpdateModal = ({ updateModal, setUpdateModal, }) => {
                                 <label class="label">
                                     <span class="label-text">Education</span>
                                 </label>
-                                <input type="text" name='education' placeholder="education" class="input input-bordered" required />
+                                <input type="text" name='education' defaultValue={updateModal?.education} placeholder="education" class="input input-bordered" required />
 
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Location</span>
                                 </label>
-                                <input type="text" name='location' placeholder="city/district" class="input input-bordered" required />
+                                <input type="text" name='location' defaultValue={updateModal?.location} placeholder="city/district" class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Phone Number</span>
                                 </label>
-                                <input type="number" name='number' placeholder="phone number with country code" class="input input-bordered" required />
+                                <input type="number" name='number' defaultValue={updateModal?.number} placeholder="phone number with country code" class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">LinkedIn Profile</span>
                                 </label>
-                                <input type="link" name='linkedin' placeholder="linkedin profile link" class="input input-bordered" required />
+                                <input type="link" name='linkedin' defaultValue={updateModal?.linkedin} placeholder="linkedin profile link" class="input input-bordered" required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
                                     <span class="label-text">Hobby</span>
                                 </label>
-                                <input type="text" name='hobby' placeholder="your hobby" class="input input-bordered" required />
+                                <input type="text" name='hobby' defaultValue={updateModal?.hobby} placeholder="your hobby" class="input input-bordered" required />
                             </div>
                             <div class="form-control mt-6">
                                 <button type='submit' class="btn btn-primary">Submit</button>
