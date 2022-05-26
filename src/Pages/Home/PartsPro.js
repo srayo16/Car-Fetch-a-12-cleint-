@@ -5,7 +5,7 @@ const PartsPro = ({ part }) => {
     const [expand, setExpand] = useState(false);
 
     const { name, img, description, price, _id, minimumOrderQuantity, availableQuantity } = part;
-
+    // console.log(part)
     return (
 
         <div class="card w-80 lg:w-96 bg-base-100 shadow-xl mx-auto" style={{ height: expand ? 'auto' : '600px' }}>

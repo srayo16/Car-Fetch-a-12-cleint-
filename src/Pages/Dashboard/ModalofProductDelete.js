@@ -17,8 +17,6 @@ const ModalofProductDelete = ({ setDeleteProduct, deleteProduct, refetch }) => {
                     refetch();
                     toast.success('Delete successful');
                 }
-
-
             })
     }
 

@@ -21,9 +21,7 @@ const Navbar = () => {
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/myportfolio'>MyPortfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
-        {
-            user ? <li className='btn btn-ghost lg:items-center w-5 lg:w-fit font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
-        }
+
 
 
     </>
@@ -47,7 +45,9 @@ const Navbar = () => {
                                     </a>
                                     <ul class="p-2 bg-primary">
                                         <li><Link to='/dashboard '>Dashboard</Link></li>
-                                        <li><a>Submenu 2</a></li>
+                                        {
+                                            user ? <li className='btn btn-ghost  w-5 font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
+                                        }
                                     </ul>
                                 </li>
                             }
@@ -66,8 +66,10 @@ const Navbar = () => {
                                     <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                                 </a>
                                 <ul class="p-2 bg-primary">
-                                    <li><Link to='/dashboard '>Dashboard</Link></li>
-                                    <li><a>Submenu 2</a></li>
+                                    <li><Link to='/dashboard'>Dashboard</Link></li>
+                                    {
+                                        user ? <li className='btn btn-ghost mx-auto items-center w-fit font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
+                                    }
                                 </ul>
                             </li>
                         }

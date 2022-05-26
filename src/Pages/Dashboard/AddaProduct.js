@@ -7,14 +7,14 @@ const AddaProduct = () => {
         event.preventDefault();
 
         const name = event.target.name.value;
-        const image = event.target.image.value;
+        const img = event.target.image.value;
         const price = event.target.price.value;
-        const quantity = event.target.quantity.value;
+        const availableQuantity = event.target.quantity.value;
         const description = event.target.description.value;
-        const minOrder = event.target.minOrder.value;
+        const minimumOrderQuantity = event.target.minOrder.value;
 
-        const total = { name, image, price, quantity, description, minOrder };
-        console.log(total);
+        const total = { name, img, price, availableQuantity, description, minimumOrderQuantity };
+        // console.log(total);
 
         fetch('http://localhost:5000/parts', {
             method: "POST",
