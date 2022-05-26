@@ -103,8 +103,9 @@ const CheckoutForm = ({ booking }) => {
 
     };
 
+
     if (processing) {
-        // return <Loading></Loading>
+        return <Loading></Loading>
     }
 
     return (

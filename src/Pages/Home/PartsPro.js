@@ -10,11 +10,11 @@ const PartsPro = ({ part }) => {
 
         <div class="card w-80 lg:w-96 bg-base-100 shadow-xl mx-auto" style={{ height: expand ? 'auto' : '600px' }}>
             <figure>
-                <img src={img} alt="Shoes" />
+                <img src={img} alt="Parts" />
             </figure>
             <div class="card-body">
                 <h2 class="card-title mx-auto">{name}</h2>
-                <p>{!expand && description.slice(0, 65) + '...'} {!expand && <button className='text-primary font-bold' onClick={() => setExpand(true)}>Read more</button>}
+                <p>{!expand && description?.slice(0, 65) + '...'} {!expand && <button className='text-primary font-bold' onClick={() => setExpand(true)}>Read more</button>}
                     {expand && description} {expand && <button className='text-primary font-bold' onClick={() => setExpand(false)}>Read less</button>}</p>
                 <p><span className='font-semibold'>Price:</span> ${price} per unit <br />
                     <span className='font-semibold'>Minimum Order:</span> {minimumOrderQuantity}ps <br />

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import CancelingModal from './CancelingModal';
 import ManageOrderPro from './ManageOrderPro';
 
 const ManageOrders = () => {
@@ -9,7 +10,7 @@ const ManageOrders = () => {
             res.json()
         )
     )
-
+    const [cancelModal, setCancelModal] = useState();
     if (isLoading) return <Loading></Loading>
 
     if (error) return 'An error has occurred: ' + error.message
@@ -34,11 +35,12 @@ const ManageOrders = () => {
                 <tbody>
 
                     {
-                        orders.map((order, index) => <ManageOrderPro key={order._id} order={order} index={index} refetch={refetch}></ManageOrderPro>)
+                        orders.map((order, index) => <ManageOrderPro key={order._id} order={order} index={index} refetch={refetch} setCancelModal={setCancelModal}></ManageOrderPro>)
                     }
 
                 </tbody>
             </table>
+            {cancelModal && <CancelingModal cancelModal={cancelModal} setCancelModal={setCancelModal} refetch={refetch}></CancelingModal>}
         </div>
     );
 };

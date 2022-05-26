@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import ManageProductsPro from './ManageProductsPro';
+import ModalofProductDelete from './ModalofProductDelete';
 
 const ManageProducts = () => {
 
-    const { isLoading, error, data: products } = useQuery('productData', () =>
+    const { isLoading, error, data: products, refetch } = useQuery('productData', () =>
         fetch('http://localhost:5000/parts').then(res =>
             res.json()
         )
     )
+
+    const [deleteProduct, setDeleteProduct] = useState();
 
     if (isLoading) return <Loading></Loading>
 
@@ -29,11 +33,14 @@ const ManageProducts = () => {
                 <tbody>
 
                     {
-
+                        products.map((product, index) => <ManageProductsPro key={product._id} product={product} index={index} setDeleteProduct={setDeleteProduct}></ManageProductsPro>)
                     }
 
                 </tbody>
             </table>
+            {
+                deleteProduct && <ModalofProductDelete deleteProduct={deleteProduct} setDeleteProduct={setDeleteProduct} refetch={refetch}></ModalofProductDelete>
+            }
         </div>
     );
 };
