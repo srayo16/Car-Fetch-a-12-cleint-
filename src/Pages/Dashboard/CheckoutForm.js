@@ -49,7 +49,7 @@ const CheckoutForm = ({ booking }) => {
 
         setCardError(error?.message || '');
         setCardSuccess('');
-        setProcessing(true);
+        // setProcessing(true);
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
