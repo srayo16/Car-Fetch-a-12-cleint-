@@ -12,7 +12,12 @@ const Purchase = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const quantities = useRef('');
     const { isLoading, error, data: singleParts } = useQuery('partsBySingle', () =>
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/parts/${id}`).then(res =>
+        fetch(`https://fathomless-atoll-13213.herokuapp.com/parts/${id}`, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res =>
             res.json()
         )
     )

@@ -11,6 +11,8 @@ const MyProfile = () => {
     const [info, setInfo] = useState([]);
     const [updateModal, setUpdateModal] = useState();
     const [infoverify, setInfoVerify] = useState(false);
+    const [reload, setReload] = useState(false);
+    const [reloads, setReloads] = useState(false);
     const email = user?.email;
 
     useEffect(() => {
@@ -21,7 +23,7 @@ const MyProfile = () => {
                 setInfoVerify(true);
                 // console.log(data);
             })
-    }, [email])
+    }, [email, reload, reloads])
 
 
     if (loading) {
@@ -55,7 +57,8 @@ const MyProfile = () => {
                 if (posted.acknowledged) {
                     toast.success('Added successfully');
                     event.target.reset();
-                    window.location.reload();
+                    setReload(!reload);
+                    // window.location.reload();
                 }
             })
     }
@@ -185,7 +188,7 @@ const MyProfile = () => {
 
                 </div>
             </div>
-            {updateModal && <UpdateModal updateModal={updateModal} info={info} setInfo={setInfo} setUpdateModal={setUpdateModal}></UpdateModal>}
+            {updateModal && <UpdateModal updateModal={updateModal} info={info} setInfo={setInfo} setUpdateModal={setUpdateModal} setReloads={setReloads} reloads={reloads}></UpdateModal>}
         </>
     );
 };

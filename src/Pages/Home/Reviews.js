@@ -11,12 +11,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const [Loadings, setLoadings] = useState(true);
     useEffect(() => {
-        fetch('https://fathomless-atoll-13213.herokuapp.com/review', {
-            method: 'GET',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
+        fetch('https://fathomless-atoll-13213.herokuapp.com/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data.reverse());

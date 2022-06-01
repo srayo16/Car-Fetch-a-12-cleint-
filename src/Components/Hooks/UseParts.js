@@ -4,12 +4,7 @@ const UseParts = () => {
     const [parts, setParts] = useState([]);
 
     useEffect(() => {
-        fetch('https://fathomless-atoll-13213.herokuapp.com/parts', {
-            method: 'GET',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
+        fetch('https://fathomless-atoll-13213.herokuapp.com/parts')
             .then(res => res.json())
             .then(data => setParts(data.reverse()))
     }, [])

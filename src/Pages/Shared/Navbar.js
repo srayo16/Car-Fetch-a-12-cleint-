@@ -22,7 +22,7 @@ const Navbar = () => {
         <li><Link to='/myportfolio'>MyPortfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         {
-            user ? <li className='btn btn-ghost w-fit lg:mx-auto lg:items-center lg:w-auto w-25  font-normal' onClick={() => logout()}>Logout</li> : <li><Link to='/login'>Login</Link></li>
+            !user && <li><Link to='/login'>Login</Link></li>
         }
 
     </>
@@ -46,6 +46,9 @@ const Navbar = () => {
                                     </a>
                                     <ul className="p-2 bg-primary">
                                         <li><Link to='/dashboard '>Dashboard</Link></li>
+                                        {
+                                            user && <li className='btn btn-ghost w-fit lg:mx-auto lg:items-center lg:w-auto w-25  font-normal' onClick={() => logout()}>Logout</li>
+                                        }
                                     </ul>
                                 </li>
                             }
@@ -57,18 +60,22 @@ const Navbar = () => {
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-1">
                         {pages}
-                        {
-                            user && <li tabIndex="0">
-                                <a>
-                                    {user?.displayName}
-                                    <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                                </a>
-                                <ul className="p-2 bg-primary">
-                                    <li><Link to='/dashboard'>Dashboard</Link></li>
-
-                                </ul>
-                            </li>
-                        }
+                        <div className='dropdown'>
+                            {
+                                user && <li tabIndex="0">
+                                    <a>
+                                        {user?.displayName}
+                                        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                                    </a>
+                                    <ul className="p-2 bg-primary mt-14  dropdown-content">
+                                        <li><Link to='/dashboard'>Dashboard</Link></li>
+                                        {
+                                            user && <li className='btn btn-ghost w-fit lg:mx-auto lg:items-center lg:w-auto w-25  font-normal' onClick={() => logout()}>Logout</li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                        </div>
 
                     </ul>
                 </div>

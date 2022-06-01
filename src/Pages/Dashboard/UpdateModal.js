@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 
-const UpdateModal = ({ updateModal, setUpdateModal, }) => {
+const UpdateModal = ({ updateModal, setUpdateModal, setReloads, reloads }) => {
     const email = updateModal?.email;
     // console.log(info)
     const updateOne = event => {
@@ -29,7 +29,8 @@ const UpdateModal = ({ updateModal, setUpdateModal, }) => {
                 if (edited?.modifiedCount > 0) {
                     setUpdateModal(null);
                     toast.success("Edit successful");
-                    window.location.reload();
+                    setReloads(!reloads);
+                    // window.location.reload();
                 }
 
             })

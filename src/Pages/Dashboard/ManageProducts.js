@@ -22,7 +22,7 @@ const ManageProducts = () => {
     if (error) return 'An error has occurred: ' + error.message
 
     return (
-        <div className="overflow-x-auto mt-5 nb-40">
+        <div className="overflow-x-auto mt-5 mb-40">
             <table className="table w-full">
 
                 <thead>
