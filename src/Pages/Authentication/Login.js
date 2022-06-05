@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 import UseToken from '../../Components/Hooks/UseToken';
 import auth from '../../Firebase.init';
 import Loading from '../Shared/Loading';
+import loginImg from '../../Images/login2.jpg';
+import './Authentication.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -65,51 +67,58 @@ const Login = () => {
 
 
     return (
-        <div className="hero h-screen bg-base-100  container mx-auto">
-            <div className="hero-content flex-col lg:flex-col">
-                <div className="text-center  lg:text-left">
-                    <h1 className="text-5xl mb-5 text-primary font-bold">Login now!</h1>
+        <>
+            <h1 className="text-5xl my-10 text-center text-primary font-bold">Login now!</h1>
+            <section className='handleSection mb-28'>
+                <div className='lg:mr-20'>
+                    <img src={loginImg} alt="loginVector" className='max-w-sm w-96 rounded-lg' />
                 </div>
-                <div className="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
-                    <div className="card-body">
-                        <form onSubmit={subLoginForm}>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" ref={email} name='email' placeholder="email" className="input input-bordered" required />
-                            </div>
+                <div>
+                    <div className="card flex-shrink-0 w-96 max-w-sm bg-base-100 lg:mr-20">
 
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" placeholder="password" className="input input-bordered" name='password' required />
+                        <div className="card-body">
+                            <form onSubmit={subLoginForm}>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
+                                    </label>
+                                    <input type="email" ref={email} name='email' placeholder="email" className="input input-bordered" required />
+                                </div>
 
-                                {errorMessage}
-                                <label className="label">
-                                    <p onClick={() => forgotPass()} className="label-text-alt link link-hover">Forgot password?</p>
-                                </label>
-                            </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Password</span>
+                                    </label>
+                                    <input type="password" placeholder="password" className="input input-bordered" name='password' required />
 
-                            <div className="form-control mt-6">
-                                <button type='submit' className="btn btn-primary">Login</button>
-                            </div>
+                                    {errorMessage}
+                                    <label className="label">
+                                        <p onClick={() => forgotPass()} className="label-text-alt link link-hover">Forgot password?</p>
+                                    </label>
+                                </div>
 
-                        </form>
+                                <div className="form-control mt-6">
+                                    <button type='submit' className="btn btn-primary">Login</button>
+                                </div>
 
-                        <p className="label-text-alt text-center cursor-pointer">New to car-fetch? <Link to='/signup'><span className='font-bold text-primary  link link-hover'>Signup now</span></Link></p>
-                        <div className="flex flex-col w-full border-opacity-50">
+                            </form>
 
-                            <div className="divider">OR</div>
-                            <div>
-                                <button onClick={() => signInWithGoogle()} className="btn btn-outline w-80 btn-primary uppercase">Continue With Google</button>
+                            <p className="label-text-alt text-center cursor-pointer">New to car-fetch? <Link to='/signup'><span className='font-bold text-primary  link link-hover'>Signup now</span></Link></p>
+                            <div className="flex flex-col w-full border-opacity-50">
+
+                                <div className="divider">OR</div>
+                                <div>
+                                    <button onClick={() => signInWithGoogle()} className="btn btn-outline w-80 btn-primary uppercase">Continue With Google</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+
+
+        </>
     );
 };
 
