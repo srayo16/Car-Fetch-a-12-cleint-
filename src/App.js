@@ -26,6 +26,8 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
 import Blogs from './Pages/Blogs';
 import Products from './Pages/Products/Products';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
         <Route path='/offerpage' element={<OfferPage></OfferPage>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/allproducts' element={<Products></Products>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
 
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrders></MyOrders>}></Route>

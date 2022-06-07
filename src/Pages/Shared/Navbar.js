@@ -20,6 +20,8 @@ const Navbar = () => {
 
         <li><Link to='/home'>Home</Link></li>
         <li><Link to='/myportfolio'>MyPortfolio</Link></li>
+        <li><Link to='/about'>About us</Link></li>
+        <li><Link to='/contact'>Contact</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         {
             !user && <li><Link to='/login'>Login</Link></li>
