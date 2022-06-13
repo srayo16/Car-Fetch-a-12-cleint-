@@ -23,21 +23,21 @@ function RequireAuth({ children }) {
         return <Navigate to="/login" state={{ from: location }} replace />;
     }
 
-    // if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
-    //     return <div className='text-center mt-5'>
-    //         <h3 className='text-red-500 font-bold text-4xl'>Your Email is not verified!!</h3>
-    //         <h5 className='text-primary text-2xl mb-3 mt-3'> Please Verify your email address</h5>
-    //         <button
-    //             className='btn btn-primary mt-2'
-    //             onClick={async () => {
-    //                 await sendEmailVerification();
-    //                 toast.success('Sent email');
-    //             }}
-    //         >
-    //             Send Verification Email Again
-    //         </button>
-    //     </div>
-    // }
+    if (user.providerData[0]?.providerId === 'password' && !user.emailVerified) {
+        return <div className='text-center mt-5 h-screen'>
+            <h3 className='text-red-500 font-bold text-4xl'>Your Email is not verified!!</h3>
+            <h5 className='text-primary text-2xl mb-3 mt-3'> Please Verify your email address</h5>
+            <button
+                className='btn btn-primary mt-2'
+                onClick={async () => {
+                    await sendEmailVerification();
+                    toast.success('Sent email');
+                }}
+            >
+                Send Verification Email Again
+            </button>
+        </div>
+    }
 
     return children;
 }
