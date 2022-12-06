@@ -1,12 +1,12 @@
-import React from 'react'; import { Link } from 'react-router-dom';
-;
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FooterPro = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
         <div className='bg-primary'>
-            <footer className="footer footer-center lg:footer container mx-auto lg:ml-80 p-10 bg-primary text-primary-content">
+            <footer className="footer footer-center lg:footer container mx-auto p-10 bg-primary text-primary-content text-center lg:pl-48 ">
                 <div>
                     <span className="footer-title">Services</span>
                     <Link to='/home' className="link link-hover">Home</Link>

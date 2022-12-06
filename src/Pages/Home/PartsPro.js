@@ -8,7 +8,7 @@ const PartsPro = ({ part }) => {
     // console.log(part)
     return (
 
-        <div className="card w-80 lg:w-96 bg-base-100 shadow-xl mx-auto" style={{ height: expand ? 'auto' : '600px' }}>
+        <div className="card w-80 lg:w-auto bg-base-100 lg:mx-5 shadow-xl mx-auto" style={{ height: expand ? 'auto' : '600px' }}>
             <figure>
                 <img src={img} alt="Parts" />
             </figure>
