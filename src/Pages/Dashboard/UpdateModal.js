@@ -16,7 +16,7 @@ const UpdateModal = ({ updateModal, setUpdateModal, setReloads, reloads }) => {
         const update = { education, location, number, linkedin, hobby };
 
 
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/information/${email}`, {
+        fetch(`https://car-fetch-a-12-server.onrender.com/information/${email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

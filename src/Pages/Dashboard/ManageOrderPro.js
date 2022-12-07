@@ -9,7 +9,7 @@ const ManageOrderPro = ({ order, index, refetch, setCancelModal }) => {
 
     const changeStatus = (id) => {
 
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/all-booking/${id}`, {
+        fetch(`https://car-fetch-a-12-server.onrender.com/all-booking/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

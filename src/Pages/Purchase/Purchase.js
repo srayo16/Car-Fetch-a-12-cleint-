@@ -12,7 +12,7 @@ const Purchase = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const quantities = useRef('');
     const { isLoading, error, data: singleParts } = useQuery('partsBySingle', () =>
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/parts/${id}`, {
+        fetch(`https://car-fetch-a-12-server.onrender.com/parts/${id}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -61,7 +61,7 @@ const Purchase = () => {
         if (orderQuantity > 1000 && orderQuantity < singleParts.availableQuantity) {
             const booked = { name, email, partsName, partsId, orderQuantity, price, number, address };
 
-            fetch('https://fathomless-atoll-13213.herokuapp.com/booking', {
+            fetch('https://car-fetch-a-12-server.onrender.com/booking', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

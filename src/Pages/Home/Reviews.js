@@ -11,7 +11,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const [Loadings, setLoadings] = useState(true);
     useEffect(() => {
-        fetch('https://fathomless-atoll-13213.herokuapp.com/review')
+        fetch('https://car-fetch-a-12-server.onrender.com/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data.reverse());

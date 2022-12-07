@@ -5,7 +5,7 @@ const UsersPro = ({ user, refetch, index }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://car-fetch-a-12-server.onrender.com/user/admin/${email}`, {
             method: 'PUT'
         })
             .then(res => res.json())

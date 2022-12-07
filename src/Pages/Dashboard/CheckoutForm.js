@@ -16,7 +16,7 @@ const CheckoutForm = ({ booking }) => {
     const { price, name, partsName, _id, email } = booking;
 
     useEffect(() => {
-        fetch("https://fathomless-atoll-13213.herokuapp.com/create-payment-intent", {
+        fetch("https://car-fetch-a-12-server.onrender.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -81,7 +81,7 @@ const CheckoutForm = ({ booking }) => {
 
             }
 
-            fetch(`https://fathomless-atoll-13213.herokuapp.com/booking/${_id}`, {
+            fetch(`https://car-fetch-a-12-server.onrender.com/booking/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

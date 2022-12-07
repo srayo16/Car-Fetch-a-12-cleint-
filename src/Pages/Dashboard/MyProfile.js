@@ -16,7 +16,7 @@ const MyProfile = () => {
     const email = user?.email;
 
     useEffect(() => {
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/information?email=${email}`)
+        fetch(`https://car-fetch-a-12-server.onrender.com/information?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setInfo(data);
@@ -44,7 +44,7 @@ const MyProfile = () => {
         const information = { name, email, education, location, number, linkedin, hobby };
         // console.log(information)
 
-        fetch('https://fathomless-atoll-13213.herokuapp.com/information', {
+        fetch('https://car-fetch-a-12-server.onrender.com/information', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

@@ -13,13 +13,13 @@ const MyOrders = () => {
     // const [test, setTest] = useState([]);
 
     // useEffect(() => {
-    //     fetch(`https://fathomless-atoll-13213.herokuapp.com/book?email=${email}`)
+    //     fetch(`https://car-fetch-a-12-server.onrender.com/book?email=${email}`)
     //         .then(res => res.json())
     //         .then(data => setTest(data))
     // }, [email])
 
     const { isLoading, error, data: orders, refetch } = useQuery('booking', () =>
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/book?email=${email}`).then(res =>
+        fetch(`https://car-fetch-a-12-server.onrender.com/book?email=${email}`).then(res =>
             res.json()
         )
     )

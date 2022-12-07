@@ -7,7 +7,7 @@ const CancelingModal = ({ cancelModal, setCancelModal, refetch }) => {
 
     const canceling = id => {
 
-        fetch(`https://fathomless-atoll-13213.herokuapp.com/booking?id=${id}`, {
+        fetch(`https://car-fetch-a-12-server.onrender.com/booking?id=${id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json"
