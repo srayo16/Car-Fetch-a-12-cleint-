@@ -4,7 +4,7 @@ import offerImg from '../../Images/offereHome.jpg';
 
 const ExtraFirst = () => {
     return (
-        <div className="hero my-h-screen my-10 lg:my-44 bg-base-100 container mx-auto">
+        <div className="hero my-h-screen my-8 lg:my-22 bg-base-100 container mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={offerImg} className="max-w-sm w-full h-auto rounded-lg lg:mt-20" alt='offer' />
                 <div className='px-10 mt-5 '>

@@ -6,6 +6,7 @@ const ReviewsPro = ({ review }) => {
     // console.log(review);
     const { name, description, rating } = review;
     const [expanded, setExpanded] = useState(false);
+    // console.log(review);
     return (
 
         <div className="card lg:max-w-lg bg-base-100 shadow-xl mx-10 lg:mx-auto my-10">
@@ -17,7 +18,7 @@ const ReviewsPro = ({ review }) => {
                 <div className="flex items-center">
                     <div className="avatar">
                         <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5">
-                            <img src={review?.image} alt="avatar" />
+                            <img src={review.image ? review.image : "https://i.ibb.co/nsKFkLH/avatar.jpg"} alt="avatar" />
                         </div>
                     </div>
                     <div>

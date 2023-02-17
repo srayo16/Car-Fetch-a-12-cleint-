@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -22,7 +23,9 @@ const Purchase = () => {
         )
     )
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     if (isLoading || loading) return <Loading></Loading>
 
     if (error) return 'An error has occurred: ' + error?.message;
@@ -85,7 +88,7 @@ const Purchase = () => {
     let pricePerInit = singleParts.price;
     let totalOrder = quantities?.current?.value;
     let priceTotal = totalOrder * pricePerInit;
-
+    // console.log(singleParts);
 
     return (
         <div className='mx-5'>
